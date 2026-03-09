@@ -14,7 +14,7 @@
 
     body {
       min-height: 100vh;
-      background: url('channels4_profile.jpg') center/cover no-repeat;
+      background: url('istockphoto-1334434982-612x612.jpg') center/cover no-repeat;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -112,7 +112,7 @@
     }
 
     .hidden {
-      display: none;
+      display: none !important;
     }
 
     .message-page {
@@ -123,6 +123,7 @@
       justify-content: center;
       align-items: center;
       padding: 20px;
+      width: 100%;
     }
 
     .message-card {
@@ -149,13 +150,13 @@
 </head>
 <body>
   <div class="card" id="homePage">
-    <img src="profile.jpg" alt="Профайл зураг" class="profile-img" />
+    <img src="channels4_profile.jpg" alt="Профайл зураг" class="profile-img" />
     <h1>ACE</h1>
     <p class="desc">
-      ACE Гэж мэдэх үү?
+      ACE гэж мэдэх үү?
     </p>
 
-    <div class="question">хэн гэдгийг мэдэх үү?</div>
+    <div class="question">Хэн гэдгийг мэдэх үү?</div>
 
     <div class="buttons">
       <button id="yesBtn">YES</button>
@@ -165,7 +166,7 @@
 
   <div class="message-page hidden" id="successPage">
     <div class="message-card">
-      <h2>100K хүрсэнд баяр хүргийй анда 🎉</h2>
+      <h2>100K хүрсэнд баяр хүргийе анда 🎉</h2>
       <p>Чиний YouTube хуудсанд амжилт хүсье!</p>
       <a class="yt-link" href="https://www.youtube.com/@ACE_bruh439" target="_blank">YouTube линк рүү орох</a>
     </div>
@@ -190,6 +191,7 @@
       homePage.classList.add('hidden');
       successPage.classList.remove('hidden');
       document.body.style.background = 'none';
+      document.body.style.display = 'block';
     });
   </script>
 </body>
