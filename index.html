@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WWW ACE WWW</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: url('background.jpg') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: rgba(0, 0, 0, 0.72);
+      color: white;
+      border-radius: 20px;
+      padding: 30px 25px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(6px);
+    }
+
+    .profile-img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .desc {
+      font-size: 16px;
+      color: #e3e3e3;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    .question {
+      font-size: 18px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      border-radius: 12px;
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: bold;
+      transition: 0.25s ease;
+    }
+
+    #yesBtn {
+      background: #ff0033;
+      color: white;
+      min-width: 110px;
+    }
+
+    #yesBtn:hover {
+      transform: scale(1.05);
+    }
+
+    #noBtn {
+      background: white;
+      color: #111;
+      min-width: 110px;
+    }
+
+    .yt-link {
+      display: inline-block;
+      margin-top: 20px;
+      background: #ff0000;
+      color: white;
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    .yt-link:hover {
+      transform: scale(1.05);
+      background: #cc0000;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .message-page {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .message-card {
+      background: rgba(255,255,255,0.08);
+      padding: 40px 30px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    .message-card h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .message-card p {
+      font-size: 18px;
+      margin-bottom: 25px;
+      color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="homePage">
+    <img src="profile.jpg" alt="Профайл зураг" class="profile-img" />
+    <h1>ACE</h1>
+    <p class="desc">
+      ACE Гэж мэдэх үү?
+    </p>
+
+    <div class="question">хэн гэдгийг мэдэх үү?</div>
+
+    <div class="buttons">
+      <button id="yesBtn">YES</button>
+      <button id="noBtn">NO</button>
+    </div>
+  </div>
+
+  <div class="message-page hidden" id="successPage">
+    <div class="message-card">
+      <h2>100K хүрсэнд баяр хүргийй анда 🎉</h2>
+      <p>Чиний YouTube хуудсанд амжилт хүсье!</p>
+      <a class="yt-link" href="https://www.youtube.com/@ACE_bruh439" target="_blank">YouTube линк рүү орох</a>
+    </div>
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const homePage = document.getElementById('homePage');
+    const successPage = document.getElementById('successPage');
+
+    let scale = 1;
+
+    noBtn.addEventListener('click', () => {
+      scale += 0.2;
+      yesBtn.style.transform = `scale(${scale})`;
+      yesBtn.style.fontSize = `${16 + scale * 3}px`;
+      yesBtn.style.padding = `${14 + scale * 2}px ${28 + scale * 5}px`;
+    });
+
+    yesBtn.addEventListener('click', () => {
+      homePage.classList.add('hidden');
+      successPage.classList.remove('hidden');
+      document.body.style.background = 'none';
+    });
+  </script>
+</body>
+</html>
